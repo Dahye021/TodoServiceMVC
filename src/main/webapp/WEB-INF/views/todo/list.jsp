@@ -17,18 +17,18 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Tno</th>
-            <th scope="col">Title</th>
-            <th scope="col">Writer</th>
-            <th scope="col">DueDate</th>
-            <th scope="col">Finished</th>
+            <th scope="row"><c:out value="${dto.tno}"/></th>
+            <td><a href="/todo/read?tno=${dto.tno}" class="text-decoration-none"><c:out value="${dto.title}"/></a></td>
+            <td><c:out value="${dto.writer}"/></td>
+            <td><c:out value="${dto.dueDate}"/></td>
+            <td><c:out value="${dto.finished}"/></td>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${dtoList}" var="dto">
             <tr>
                 <th scope="row"><c:out value="${dto.tno}"/></th>
-                <td><c:out value="${dto.title}"/></td>
+                <td><a href="/todo/read?tno=${dto.tno}" class="text-decoration-none"><c:out value="${dto.title}"/></a></td>
                 <td><c:out value="${dto.writer}"/></td>
                 <td><c:out value="${dto.dueDate}"/></td>
                 <td><c:out value="${dto.finished}"/></td>

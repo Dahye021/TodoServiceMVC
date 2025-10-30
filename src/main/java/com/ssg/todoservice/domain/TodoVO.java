@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class TodoVO {
-    private Long id;
+    private Long tno;
     private String title;
     private LocalDate dueDate;
     private String writer;

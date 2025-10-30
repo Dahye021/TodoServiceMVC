@@ -49,6 +49,12 @@
     </form>
 </div>
 <script>
+
+    const serverValidResult = {} <c:forEach items="${errors}" var="error">
+    serverValidResult['${error.getField()}'] = '${error.defaultMessage}' </c:forEach>
+    console.log(serverValidResult)
+
+
     const formObj = document.querySelector("form")
     document.querySelector(".btn-danger").addEventListener("click",function(e)
     {
@@ -58,6 +64,15 @@
         formObj.method ="post"
         formObj.submit()
     },false);
+
+    document.querySelector(".btn-primary").addEventListener("click",function(e) {
+        e.preventDefault()
+        e.stopPropagation()
+        formObj.action ="/todo/modify"
+        formObj.method ="post"
+        formObj.submit()
+    },false);
+
 </script>
 
 </body>
